@@ -19,4 +19,6 @@ public interface CustomerService {
 
 
     List<CustomerDTO> getAllCustomersByActiveStatus(boolean activestatus);
+
+    List<CustomerDTO> getByName(String customerName);
 }

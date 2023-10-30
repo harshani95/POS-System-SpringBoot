@@ -3,6 +3,7 @@ package com.springbootacademy.pos.service.impl;
 import com.springbootacademy.pos.dto.CustomerDTO;
 import com.springbootacademy.pos.dto.request.CustomerUpdateDTO;
 import com.springbootacademy.pos.entity.Customer;
+import com.springbootacademy.pos.exeption.NotFoundException;
 import com.springbootacademy.pos.repo.CustomerRepo;
 import com.springbootacademy.pos.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,7 +48,8 @@ public class CustomerServiceIMPL implements CustomerService {
             return  customerUpdateDTO.getCustomerName() + "Updated";
         }
         else {
-            throw new RuntimeException("No data Found for that ID");
+           // throw new RuntimeException("No data Found for that ID");
+            throw new NotFoundException("No data Found for that ID");
         }
     }
 
@@ -122,4 +124,11 @@ public class CustomerServiceIMPL implements CustomerService {
         return customerDTOS;
 
     }
+
+    @Override
+    public List<CustomerDTO> getByName(String customerName) {
+        return null;
+    }
+
+
 }
